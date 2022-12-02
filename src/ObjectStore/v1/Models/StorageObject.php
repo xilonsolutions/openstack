@@ -62,6 +62,9 @@ class StorageObject extends OperatorResource implements Creatable, Deletable, Ha
             ];
     }
 
+    public function getLastModified(){
+        return $this->lastModified;
+    }
     /**
      * {@inheritdoc}
      */
