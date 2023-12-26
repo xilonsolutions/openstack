@@ -16,6 +16,7 @@ use OpenStack\Common\Auth\Token;
 use OpenStack\Common\Transport\HandlerStack;
 use OpenStack\Common\Transport\Middleware;
 use OpenStack\Common\Transport\Utils;
+use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * A Builder for easily creating OpenStack services.
@@ -147,7 +148,7 @@ class Builder
             $retries,
             Request $request,
             Response $response = null,
-            RequestException $exception = null
+            ClientExceptionInterface $exception = null
         ) {
             if($retries>0){
                 //$this->output->write(sprintf(" <error>Ret#%s</error>", $retries),false,OutputInterface::VERBOSITY_VERBOSE);
